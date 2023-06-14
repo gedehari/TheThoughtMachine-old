@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('head.ejs') %>
+    <title>the thought machine</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>welcome to the thought machine</h1>
+            <h4>feel free to pour your thoughts here...</h4>
+            <a href="/thought/new" class="button">New Thought</a>
+        </header>
+        <main>
+            <!-- Thought cards -->
+            <% thoughts.forEach(thought => { %>
+            <div class="thought">
+                <h2 class=""><%= thought.title %></h2>
+                <p class="date"><%= thought.createdAt %></p>
+                <p class=""><%= thought.thought %></p>
+            </div>
+            <% }); %>
+        </main>
+        <footer>
+            <div class="author">
+                <p><a href="https://gedehari.github.io/" target="_blank">gedehari</a>, 2021</p>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
